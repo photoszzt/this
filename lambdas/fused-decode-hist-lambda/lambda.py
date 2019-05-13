@@ -116,7 +116,7 @@ def ensure_clean_state():
   if os.path.exists(DECODER_PATH):
     os.remove(DECODER_PATH)
   # shutil.copy('DecoderAutomataCmd-static', DECODER_PATH)
-  urlretrieve("https://s3-us-west-2.amazonaws.com/mxnet-params/FusedDecodeHist-static", DECODER_PATH)
+  urlretrieve("https://s3.amazonaws.com/this-upload/mxnet-params/FusedDecodeHist-static", DECODER_PATH)
   os.chmod(DECODER_PATH, 0o755)
 
 def convert_to_output(protoPath, binPath):
@@ -146,7 +146,7 @@ def handler(event, context):
   startFrame = 0
   outputBatchSize = 50
 
-  outputBucket = "vass-video-samples2-results"
+  outputBucket = "this-download"
   outputPrefix = DEFAULT_OUT_FOLDER
   
   if 'inputBucket' in event:
@@ -231,7 +231,7 @@ def handler(event, context):
 
 
 if __name__ == '__main__':
-  inputBucket = 'vass-video-samples2'
+  inputBucket = 'this-upload'
   inputPrefix = 'protobin-fused-local/example3_138_50'
   startFrame = 0
   outputBatchSize = 50

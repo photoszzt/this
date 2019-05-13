@@ -68,17 +68,17 @@ def download_video2(videoUrl = ''):
   VID_PATH = "/tmp/example.mkv"
 
   if not os.path.isfile(VID_PATH):
-    print 'Downloading file: %s' % videoUrl
+    print('Downloading file: %s' % videoUrl)
 
     urllib.urlretrieve(videoUrl, VID_PATH)
-    print 'Download complete'
+    print('Download complete')
     if not os.path.exists(VID_PATH):
       raise Exception('%s does not exist' % VID_PATH)
     else:
       inputSize = os.path.getsize(VID_PATH)
       os.chmod(VID_PATH, 0o0755)
-      print ' [%dKB] %s' % (inputSize >> 10, VID_PATH)
-      print ' [md5] %s' % get_md5(VID_PATH)
+      print(' [%dKB] %s' % (inputSize >> 10, VID_PATH))
+      print(' [md5] %s' % get_md5(VID_PATH))
   return VID_PATH
 
 def have_gpu():

@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ggdb")
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui xfeatures2d imgcodecs)
+find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui features2d imgcodecs)
 find_package(Storehouse REQUIRED CONFIG
   PATHS "/opt/scanner/thirdparty/build/bin/storehouse")
 find_package(FFmpeg REQUIRED)

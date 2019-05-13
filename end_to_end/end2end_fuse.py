@@ -17,7 +17,7 @@ import util
 from timeit import default_timer as now
 import time
 import math
-from urllib import urlretrieve
+from urllib.request import urlretrieve
 import boto3
 import botocore
 from multiprocessing.pool import ThreadPool
